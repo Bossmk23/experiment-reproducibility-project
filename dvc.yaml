@@ -1,0 +1,13 @@
+stages:
+  train_model:
+    cmd: python train.py --config config.yaml
+    deps:
+      - train.py
+      - config.yaml
+      - datasets/loader.py
+      - models/simple_model.py
+      - utils/metrics.py
+      - utils/config.py
+    outs:
+      - models/model.pkl
+      - results/metrics.json
